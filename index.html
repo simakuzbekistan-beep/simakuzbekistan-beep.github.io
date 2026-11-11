@@ -209,6 +209,42 @@ footer .copy{position:relative;z-index:1;border-top:1px solid #26282C;padding:14
 .cat:hover .cat-usk{transform:translateY(-6px) scale(1.04)}
 .cat-top img.cat-usk{position:absolute;inset:auto 10px 6px auto;width:auto;height:72%;max-width:58%;object-fit:contain;object-position:right bottom;animation:none}
 @media (max-width:920px){.hero-banner{padding:16px 12px 0}.hero-banner img{border-radius:14px}.hero .wrap{grid-template-columns:1fr!important;padding-top:28px!important}.hero .cta{grid-column:1;grid-row:auto;flex-direction:row}}
+/* uskunalar katalogi */
+section.dark{background:#0E0F11;color:#fff;margin-top:72px;padding:72px 0 80px;position:relative;overflow:hidden}
+section.dark::before{content:"";position:absolute;inset:0;background:radial-gradient(60% 50% at 85% 0%,rgba(224,30,38,.18),transparent 70%);pointer-events:none}
+section.dark .lead{color:#A3A7AE}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 18px;margin:0 0 6px;scrollbar-width:none;position:relative}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;border:1px solid #2A2C31;background:#17181B;color:#D6D8DC;border-radius:999px;padding:9px 16px;font-weight:600;font-size:14.5px;line-height:1;font-family:inherit;cursor:pointer;display:flex;gap:8px;align-items:center;transition:.2s}
+.tab i{font-style:normal;font-size:12px;background:#2A2C31;border-radius:999px;padding:2px 7px}
+.tab:hover{border-color:#555}
+.tab[aria-selected=true]{background:var(--red);border-color:var(--red);color:#fff}.tab[aria-selected=true] i{background:rgba(0,0,0,.25)}
+.pane{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;position:relative}
+.pane[hidden]{display:none}
+.fc{perspective:1200px;cursor:pointer;outline:none;animation:fcIn .6s both}
+.fc:nth-child(2){animation-delay:.06s}.fc:nth-child(3){animation-delay:.12s}.fc:nth-child(4){animation-delay:.18s}.fc:nth-child(5){animation-delay:.24s}.fc:nth-child(n+6){animation-delay:.3s}
+@keyframes fcIn{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+.fc-in{position:relative;transition:transform .8s cubic-bezier(.3,.7,.2,1);transform-style:preserve-3d;height:100%}
+.fc.on .fc-in{transform:rotateY(180deg)}
+.fc-f,.fc-b{backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:16px;overflow:hidden;background:#16181B;border:1px solid #24262B}
+.fc-f{display:flex;flex-direction:column;height:100%}
+.fc-b{position:absolute;inset:0;transform:rotateY(180deg);padding:20px;display:flex;flex-direction:column;gap:10px;background:linear-gradient(160deg,#1C1E22,#121316);overflow:auto}
+.fc-img{aspect-ratio:1;overflow:hidden;perspective:900px;background:#16181b}
+.fc-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s cubic-bezier(.2,.7,.2,1);animation:sway 7s ease-in-out infinite}
+.fc:nth-child(2n) .fc-img img{animation-delay:-3.5s}
+@keyframes sway{0%,100%{transform:rotateY(-8deg) scale(1.03)}50%{transform:rotateY(8deg) scale(1.03)}}
+.fc:hover .fc-img img{animation-play-state:paused;transform:scale(1.08)}
+.fc-f b{padding:14px 16px 4px;font-size:16px;line-height:1.25}
+.fc-hint{display:flex;align-items:center;gap:6px;padding:0 16px 14px;color:#8E929A;font-size:12.5px;margin-top:auto}
+.fc-hint svg{width:15px;height:15px;color:var(--red);transition:transform .5s;flex:none}
+.fc:hover .fc-hint svg{transform:rotate(-200deg)}
+.fc-tx{flex:1;min-height:0;overflow:auto;display:flex;flex-direction:column;gap:8px;scrollbar-width:thin}.fc-b{overflow:hidden}.fc-b .btn{flex:none}.fc-b b{font-size:17px}
+.fc-b p{margin:0;color:#C9CBD0;font-size:14px;line-height:1.5}
+.fc-b em{font-style:normal;color:#9EA2AA;font-size:13px}
+.fc-b .btn{margin-top:auto;justify-content:center}
+.fc-back{color:#8E929A;font-size:12.5px;text-align:center}
+.fc:focus-visible .fc-f,.fc:focus-visible .fc-b{outline:2px solid var(--red);outline-offset:2px}
+@media (max-width:920px){.pane{grid-template-columns:repeat(2,1fr);gap:12px}.fc-f b{font-size:14.5px;padding:10px 12px 2px}.fc-hint{padding:0 12px 10px;font-size:11.5px}.fc-b{padding:14px;gap:8px}.fc-b p{font-size:13px}.fc-b b{font-size:15px}.fc-b em{display:none}.fc-b .btn{padding:9px 10px;font-size:13px}.fc-back{font-size:11.5px}section.dark{padding:56px 0 64px;margin-top:56px}}
 </style>
 </head>
 <body>
@@ -323,6 +359,18 @@ footer .copy{position:relative;z-index:1;border-top:1px solid #26282C;padding:14
   </div>
 </section>
 
+<section id="uskunalar" class="dark">
+  <div class="wrap">
+    <h2>Uskunalarimiz</h2>
+    <p class="lead">Bo'limni tanlang va uskunani bosing: u aylanib, qisqacha ma'lumotni ko'rsatadi.</p>
+    <div class="tabs" role="tablist"><button class="tab" role="tab" data-t="t0" aria-selected="true">Go'sht va qassob<i>2</i></button><button class="tab" role="tab" data-t="t1" aria-selected="false">Nonvoyxona va qandolat<i>3</i></button><button class="tab" role="tab" data-t="t2" aria-selected="false">Fast-food<i>1</i></button><button class="tab" role="tab" data-t="t3" aria-selected="false">Qadoqlash<i>1</i></button></div>
+    <div class="pane" id="t0" role="tabpanel"><div class="fc" tabindex="0" role="button" aria-label="Go'sht qiymalagichlar - batafsil"><div class="fc-in"><div class="fc-f"><div class="fc-img"><img src="img/usk/gosht-qiymalagichlar.jpg" alt="Go'sht qiymalagichlar" loading="lazy" width="800" height="800"></div><b>Go'sht qiymalagichlar</b><span class="fc-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.300-5.600M20 4v5h-5"/></svg>Bosing - batafsil</span></div><div class="fc-b"><div class="fc-tx"><b>Go'sht qiymalagichlar</b><p>8 tishlidan 42 tishligacha go'sht qiymalagichlar, 220V va 380V tokka. Korpusi zanglamas po'lat, reduktoriga 1 yil kafolat, ehtiyot qismlari doim bor.</p><em>Kimga mos: Uy va kichik hajm (12 tishli), qassobxona, shashlikxona va restoran (22–32 tishli), katta qassobxona, go'sht do'koni va ishlab chiqarish sexi (Turkiya 32 tishli, 42 tishli).</em></div><a class="btn btn-red" href="https://t.me/simak_admin" target="_blank" rel="noopener">Narx so'rash</a><span class="fc-back">&#8634; Rasmga qaytish</span></div></div></div>
+<div class="fc" tabindex="0" role="button" aria-label="Boshqa qassob jihozlari - batafsil"><div class="fc-in"><div class="fc-f"><div class="fc-img"><img src="img/usk/boshqa-qassob-jihozlari.jpg" alt="Boshqa qassob jihozlari" loading="lazy" width="800" height="800"></div><b>Boshqa qassob jihozlari</b><span class="fc-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.300-5.600M20 4v5h-5"/></svg>Bosing - batafsil</span></div><div class="fc-b"><div class="fc-tx"><b>Boshqa qassob jihozlari</b><p>Go'sht va pishloq dilimlagich (slayser), mol va qo'y terisini shilish mashinasi, qo'l elektr arra.</p></div><a class="btn btn-red" href="https://t.me/simak_admin" target="_blank" rel="noopener">Narx so'rash</a><span class="fc-back">&#8634; Rasmga qaytish</span></div></div></div></div><div class="pane" id="t1" role="tabpanel" hidden><div class="fc" tabindex="0" role="button" aria-label="Pechlar - batafsil"><div class="fc-in"><div class="fc-f"><div class="fc-img"><img src="img/usk/pechlar.jpg" alt="Pechlar" loading="lazy" width="800" height="800"></div><b>Pechlar</b><span class="fc-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.300-5.600M20 4v5h-5"/></svg>Bosing - batafsil</span></div><div class="fc-b"><div class="fc-tx"><b>Pechlar</b><p>1 qavat 1 patnisdan 3 qavat 9 patnisgacha elektr va gazli pechlar. 1 patnisga taxminan 50 ta somsa yoki 12 ta buxonka sig'adi; kichik modeli oddiy rozetkaga ulanadi.</p><em>Kimga mos: Uy biznesi, somsaxona, nonvoyxona, qandolatxona, kafe va restoran.</em></div><a class="btn btn-red" href="https://t.me/simak_admin" target="_blank" rel="noopener">Narx so'rash</a><span class="fc-back">&#8634; Rasmga qaytish</span></div></div></div>
+<div class="fc" tabindex="0" role="button" aria-label="Xamir qorg'ichlar (mishalka) - batafsil"><div class="fc-in"><div class="fc-f"><div class="fc-img"><img src="img/usk/xamir-qorgichlar.jpg" alt="Xamir qorg'ichlar (mishalka)" loading="lazy" width="800" height="800"></div><b>Xamir qorg'ichlar (mishalka)</b><span class="fc-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.300-5.600M20 4v5h-5"/></svg>Bosing - batafsil</span></div><div class="fc-b"><div class="fc-tx"><b>Xamir qorg'ichlar (mishalka)</b><p>Bir martada 4 kg dan 50 kg gacha xamir qoradigan spiral va vilkali mishalkalar. Spiral turi qattiq va yumshoq xamirga universal, vilkali turi asosan yumshoq xamir uchun; reduktoriga 1 yil kafolat.</p><em>Kimga mos: Uy va kichik pishiriqxona (4–12,5 kg, 220V), nonvoyxona, somsaxona, qandolat va ishlab chiqarish sexlari (25–50 kg, asosan 380V).</em></div><a class="btn btn-red" href="https://t.me/simak_admin" target="_blank" rel="noopener">Narx so'rash</a><span class="fc-back">&#8634; Rasmga qaytish</span></div></div></div>
+<div class="fc" tabindex="0" role="button" aria-label="Planetar mikserlar - batafsil"><div class="fc-in"><div class="fc-f"><div class="fc-img"><img src="img/usk/planetar-mikserlar.jpg" alt="Planetar mikserlar" loading="lazy" width="800" height="800"></div><b>Planetar mikserlar</b><span class="fc-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.300-5.600M20 4v5h-5"/></svg>Bosing - batafsil</span></div><div class="fc-b"><div class="fc-tx"><b>Planetar mikserlar</b><p>7 litrdan 60 litrgacha mikserlar — tuxum ko'pirtirish, krem, biskvit va keks xamiri uchun. Qutida 3 xil nasadka bor, reduktoriga 1 yil kafolat; qattiq xamir uchun mishalka tavsiya qilinadi.</p><em>Kimga mos: Uy va kichik biznes (7 L), qandolatxona, tortxona va ishlab chiqarish (10–30 L), katta qandolat sexi (40–60 L).</em></div><a class="btn btn-red" href="https://t.me/simak_admin" target="_blank" rel="noopener">Narx so'rash</a><span class="fc-back">&#8634; Rasmga qaytish</span></div></div></div></div><div class="pane" id="t2" role="tabpanel" hidden><div class="fc" tabindex="0" role="button" aria-label="Frityurlar (fri apparatlari) - batafsil"><div class="fc-in"><div class="fc-f"><div class="fc-img"><img src="img/usk/frityurlar.jpg" alt="Frityurlar (fri apparatlari)" loading="lazy" width="800" height="800"></div><b>Frityurlar (fri apparatlari)</b><span class="fc-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.300-5.600M20 4v5h-5"/></svg>Bosing - batafsil</span></div><div class="fc-b"><div class="fc-tx"><b>Frityurlar (fri apparatlari)</b><p>3 litrdan 11 litrgacha bitta va ikki bo'limli frityurlar, savatchasi avtomatik ko'tariladigan modeli ham bor.</p></div><a class="btn btn-red" href="https://t.me/simak_admin" target="_blank" rel="noopener">Narx so'rash</a><span class="fc-back">&#8634; Rasmga qaytish</span></div></div></div></div><div class="pane" id="t3" role="tabpanel" hidden><div class="fc" tabindex="0" role="button" aria-label="Vakuum va qadoqlash apparatlari - batafsil"><div class="fc-in"><div class="fc-f"><div class="fc-img"><img src="img/usk/vakuum-va-qadoqlash-apparatlari.jpg" alt="Vakuum va qadoqlash apparatlari" loading="lazy" width="800" height="800"></div><b>Vakuum va qadoqlash apparatlari</b><span class="fc-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.300-5.600M20 4v5h-5"/></svg>Bosing - batafsil</span></div><div class="fc-b"><div class="fc-tx"><b>Vakuum va qadoqlash apparatlari</b><p>Vakuumlash va vakuum qadoqlash mashinalari, lentali payvand qadoqlash, stakan qopqog'ini yopishtirish apparati va qadoqlash tarozisi.</p></div><a class="btn btn-red" href="https://t.me/simak_admin" target="_blank" rel="noopener">Narx so'rash</a><span class="fc-back">&#8634; Rasmga qaytish</span></div></div></div></div>
+  </div>
+</section>
+
 <section id="biz-haqimizda">
   <div class="wrap about">
     <div>
@@ -388,6 +436,17 @@ if(!('IntersectionObserver' in window)){return}
 els.forEach(function(e,i){e.classList.add('rv');var sib=Array.prototype.indexOf.call(e.parentNode.children,e);e.style.setProperty('--d',(Math.min(sib,6)*0.08)+'s')});
 var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.12,rootMargin:'0px 0px -40px 0px'});
 els.forEach(function(e){io.observe(e)})})();
+</script>
+<script>
+(function(){
+var tabs=document.querySelectorAll('.tab');
+tabs.forEach(function(b){b.addEventListener('click',function(){tabs.forEach(function(x){x.setAttribute('aria-selected',x===b?'true':'false');var p=document.getElementById(x.dataset.t);if(p)p.hidden=x!==b;});});});
+document.querySelectorAll('.fc').forEach(function(c){
+  function t(ev){if(ev.target.closest('a'))return;c.classList.toggle('on');}
+  c.addEventListener('click',t);
+  c.addEventListener('keydown',function(ev){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();t(ev);}});
+});
+})();
 </script>
 </body>
 </html>
