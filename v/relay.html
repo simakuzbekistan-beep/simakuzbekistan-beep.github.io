@@ -1,0 +1,6 @@
+<!doctype html><meta charset=utf-8><title>relay</title><body style="background:#111;color:#ccc;font:14px sans-serif">relay<script>
+(async()=>{const names=decodeURIComponent(location.hash.slice(1)).split(',').filter(Boolean);
+for(const n of names){try{const b=await (await fetch('p/'+n+'?'+Date.now())).blob();const buf=await b.arrayBuffer();
+window.opener.postMessage({simak:1,name:n,buf},'*',[buf]);}catch(e){window.opener.postMessage({simak:1,name:n,err:String(e)},'*')}}
+setTimeout(()=>window.close(),600)})();
+</script>
