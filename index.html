@@ -25,7 +25,7 @@ h1,h2,h3{letter-spacing:-.015em}
 /* header */
 header{background:rgba(14,15,17,.96);backdrop-filter:blur(8px);position:sticky;top:0;z-index:20;border-bottom:1px solid #26282C}
 .nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:18px}
-.nav .logo img{height:54px;width:auto;display:block}
+.nav .logo img{height:54px;width:auto;display:block}.nav .logo .lg-c{display:none;height:40px}header{transition:box-shadow .25s}header.sc{box-shadow:0 6px 24px rgba(0,0,0,.45)}header.sc .nav{height:60px}.nav{transition:height .25s}header.sc .nav .logo .lg-f{display:none}header.sc .nav .logo .lg-c{display:block}
 .nav nav{display:flex;gap:34px}
 .nav nav a{text-decoration:none;color:#D5D7DB;font-size:16px;font-weight:500;padding:6px 0;border-bottom:2px solid transparent}
 .nav nav a:hover{color:#fff;border-color:var(--red)}
@@ -185,7 +185,7 @@ footer .copy{position:relative;z-index:1;border-top:1px solid #26282C;padding:14
 @media (max-width:520px){
   .grid{grid-template-columns:1fr}.grid .cat:first-child{grid-column:auto}
   .wrap{padding:0 16px}
-  .nav{height:66px}.nav .logo img{height:44px}
+  .nav{height:66px}.nav .logo .lg-f{display:none}.nav .logo .lg-c{display:block;height:40px}header.sc .nav{height:56px}header.sc .nav .logo .lg-c{height:34px}
   .nav .btn{padding:9px 13px;font-size:14px}
   .cta .btn{width:100%}
   .facts{grid-template-columns:1fr}
@@ -290,7 +290,7 @@ section.dark .lead{color:#A3A7AE}
 
 <header>
   <div class="wrap nav">
-    <a class="logo" href="#" aria-label="SIMAK bosh sahifa"><img src="img/logo.png" alt="SIMAK Professional Equipment" width="105" height="54"></a>
+    <a class="logo" href="#" aria-label="SIMAK bosh sahifa"><img class="lg-f" src="img/logo-toliq.webp" alt="SIMAK Professional Equipment" width="120" height="54"><img class="lg-c" src="img/logo-ixcham.webp" alt="" width="104" height="40"></a>
     <nav>
       <a href="#bolimlar">Uskunalar</a>
       <a href="#biz-haqimizda">Biz haqimizda</a>
@@ -547,5 +547,6 @@ document.addEventListener('keydown',function(ev){if(ev.key==='Escape'&&ms.classL
 window.addEventListener('popstate',function(){close()});
 })();
 </script>
+<script>(function(){var h=document.querySelector('header'),on=false;function f(){var v=window.scrollY>40;if(v!==on){on=v;h.classList.toggle('sc',v)}}window.addEventListener('scroll',f,{passive:true});f()})();</script>
 </body>
 </html>
