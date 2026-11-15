@@ -1,0 +1,37 @@
+/* SIMAK sayt chati — oyna ko'rinishi */
+.sc-btn{position:fixed;right:18px;bottom:18px;z-index:9998;display:flex;align-items:center;gap:8px;background:#E01E26;color:#fff;border:0;border-radius:999px;padding:13px 18px 13px 15px;font:600 15px/1 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;box-shadow:0 8px 24px rgba(224,30,38,.35);cursor:pointer}
+.sc-btn svg{width:22px;height:22px}
+.sc-btn.sc-hide{display:none}
+.sc-box{position:fixed;right:18px;bottom:18px;z-index:9999;width:370px;max-width:calc(100vw - 24px);height:560px;max-height:calc(100vh - 36px);background:#fff;border-radius:16px;box-shadow:0 18px 50px rgba(0,0,0,.28);display:none;flex-direction:column;overflow:hidden;font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;color:#0E0F11}
+.sc-box.sc-open{display:flex}
+.sc-head{background:#0E0F11;color:#fff;padding:14px 14px 12px 16px;display:flex;align-items:center;gap:10px;border-bottom:3px solid #E01E26}
+.sc-ava{width:38px;height:38px;border-radius:50%;background:#E01E26;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex:none}
+.sc-ttl{flex:1;min-width:0}
+.sc-ttl b{display:block;font-size:15.5px}
+.sc-ttl span{font-size:12.5px;color:#B9BCC2}
+.sc-ttl span i{display:inline-block;width:8px;height:8px;border-radius:50%;background:#2BC46B;margin-right:5px;vertical-align:0}
+.sc-x{background:none;border:0;color:#fff;font-size:26px;line-height:1;cursor:pointer;padding:4px 6px}
+.sc-log{flex:1;overflow-y:auto;padding:14px 12px;background:#F3F3F1;display:flex;flex-direction:column;gap:8px}
+.sc-m{max-width:84%;padding:9px 12px;border-radius:14px;white-space:pre-wrap;word-wrap:break-word}
+.sc-m small{display:block;font-size:11.5px;color:#7A7F88;margin-bottom:2px;font-weight:600}
+.sc-bot,.sc-op{align-self:flex-start;background:#fff;border:1px solid #E4E5E8;border-bottom-left-radius:4px}
+.sc-op{border-color:#E01E26}
+.sc-op small{color:#E01E26}
+.sc-me{align-self:flex-end;background:#E01E26;color:#fff;border-bottom-right-radius:4px}
+.sc-sys{align-self:center;font-size:12.5px;color:#5B606A;background:#E9E9E6;border-radius:999px;padding:4px 12px;text-align:center}
+.sc-qr{display:flex;flex-wrap:wrap;gap:6px;align-self:flex-start;max-width:100%}
+.sc-qr button{background:#fff;border:1.5px solid #E01E26;color:#B5161F;border-radius:999px;padding:6px 12px;font:600 13.5px/1.2 inherit;font-family:inherit;cursor:pointer}
+.sc-qr button:hover{background:#E01E26;color:#fff}
+.sc-typing{align-self:flex-start;background:#fff;border:1px solid #E4E5E8;border-radius:14px;padding:10px 14px;display:none}
+.sc-typing.on{display:block}
+.sc-typing i{display:inline-block;width:7px;height:7px;margin:0 2px;border-radius:50%;background:#9A9EA6;animation:scd 1.2s infinite}
+.sc-typing i:nth-child(2){animation-delay:.2s}.sc-typing i:nth-child(3){animation-delay:.4s}
+@keyframes scd{0%,60%,100%{opacity:.3}30%{opacity:1}}
+.sc-form{display:flex;gap:8px;padding:10px;border-top:1px solid #E4E5E8;background:#fff}
+.sc-form textarea{flex:1;resize:none;border:1.5px solid #E4E5E8;border-radius:12px;padding:9px 11px;font:15px/1.35 inherit;font-family:inherit;max-height:96px;outline:0}
+.sc-form textarea:focus{border-color:#E01E26}
+.sc-form button{background:#E01E26;border:0;border-radius:12px;width:46px;color:#fff;cursor:pointer;flex:none}
+.sc-form button svg{width:20px;height:20px}
+.sc-foot{font-size:11.5px;color:#7A7F88;text-align:center;padding:0 10px 8px;background:#fff}
+.sc-foot a{color:#5B606A}
+@media (max-width:520px){.sc-box{right:0;bottom:0;width:100vw;max-width:100vw;height:100%;max-height:100%;border-radius:0}.sc-btn{right:14px;bottom:14px}}

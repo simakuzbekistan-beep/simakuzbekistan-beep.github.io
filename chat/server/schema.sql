@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS sessions (sid TEXT PRIMARY KEY, topic_id INTEGER, model TEXT, created INTEGER);
+CREATE INDEX IF NOT EXISTS idx_topic ON sessions(topic_id);
+CREATE TABLE IF NOT EXISTS msgs (id INTEGER PRIMARY KEY AUTOINCREMENT, sid TEXT, text TEXT, created INTEGER);
+CREATE INDEX IF NOT EXISTS idx_msgs ON msgs(sid, id);

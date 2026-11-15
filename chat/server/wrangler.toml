@@ -1,0 +1,18 @@
+name = "simak-chat"
+main = "worker.js"
+compatibility_date = "2025-10-01"
+
+[vars]
+# Chat qaysi saytlardan ishlaydi (vergul bilan)
+ALLOWED_ORIGIN = "https://simakuzbekistan-beep.github.io,https://simak.uz"
+# Operatorlar Telegram guruhining ID raqami (masalan -1001234567890). Sozlashda yoziladi.
+GROUP_ID = ""
+
+[[d1_databases]]
+binding = "DB"
+database_name = "simak-chat"
+database_id = ""   # "wrangler d1 create simak-chat" chiqargan ID shu yerga
+
+# Maxfiy qiymatlar (kodda YOZILMAYDI, faqat Muhammad o'zi kiritadi):
+#   wrangler secret put TG_TOKEN    -> yangi sayt-bot tokeni (@BotFather)
+#   wrangler secret put TG_SECRET   -> istalgan uzun tasodifiy so'z (webhook himoyasi)
