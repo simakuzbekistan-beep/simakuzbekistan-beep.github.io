@@ -11,6 +11,9 @@
       var model = txt(card.querySelector('b'));
       return HI + (sec ? ' ' + sec + ' bo\'limidan.' : '') + (model ? ' «' + model + '» narxi qancha?' : ' Narxini bilmoqchiman.');
     }
+    var fc = a.closest('.fc');                    // "Uskunalar" bo'limidagi tur kartasi
+    if (fc && fc.querySelector('b'))
+      return HI + ' ' + txt(fc.querySelector('b')) + ' bo\'yicha narx bilmoqchiman.';
     var cat = a.closest('article');
     if (cat && cat.querySelector('h3'))           // bo'lim kartasi
       return HI + ' ' + txt(cat.querySelector('h3')) + ' bo\'yicha narx bilmoqchiman.';
