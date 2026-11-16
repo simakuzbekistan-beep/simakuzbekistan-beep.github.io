@@ -285,6 +285,32 @@ section.dark .lead{color:#A3A7AE}
 .mi-t .btn{align-self:flex-start;margin-top:6px}
 @media (max-width:700px){.mi{grid-template-columns:1fr}.mi-t{padding:16px 16px 18px}.mi-t b{font-size:18px}.ms-l{padding:12px 12px 90px;gap:12px}.ms-h{padding:12px 14px}.ms-h b{font-size:17px}.mi-t .btn{align-self:stretch;justify-content:center}}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '3315628741961470');
+fbq('track', 'PageView');
+/* Contact: Telegram (t.me), telefon (tel:) yoki WhatsApp (wa.me) havolasi bosilganda */
+document.addEventListener('click', function (e) {
+  var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+  if (!a) return;
+  var h = (a.getAttribute('href') || '').toLowerCase();
+  if (h.indexOf('tel:') === 0 || /^(https?:\/\/)?(www\.)?(t\.me|wa\.me)\//.test(h)) {
+    try { fbq('track', 'Contact'); } catch (err) {}
+  }
+}, true);
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=3315628741961470&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 

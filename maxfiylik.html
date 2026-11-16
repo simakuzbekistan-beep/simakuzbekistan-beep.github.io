@@ -20,12 +20,38 @@ h2{font-size:20px;margin:30px 0 8px}
 a{color:#D71F2A}
 footer{background:#111214;color:#A3A7AE;padding:28px 0;font-size:14px}
 </style>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '3315628741961470');
+fbq('track', 'PageView');
+/* Contact: Telegram (t.me), telefon (tel:) yoki WhatsApp (wa.me) havolasi bosilganda */
+document.addEventListener('click', function (e) {
+  var a = e.target && e.target.closest ? e.target.closest('a[href]') : null;
+  if (!a) return;
+  var h = (a.getAttribute('href') || '').toLowerCase();
+  if (h.indexOf('tel:') === 0 || /^(https?:\/\/)?(www\.)?(t\.me|wa\.me)\//.test(h)) {
+    try { fbq('track', 'Contact'); } catch (err) {}
+  }
+}, true);
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=3315628741961470&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </head>
 <body>
 <header><div class="wrap"><a href="index.html"><img src="img/logo.png" alt="SIMAK" width="97" height="50"></a><a class="back" href="index.html">← Bosh sahifa</a></div></header>
 <main><div class="wrap">
 <h1>Maxfiylik siyosati</h1>
-<p class="muted">Oxirgi yangilanish: 2026-yil 11-noyabr</p>
+<p class="muted">Oxirgi yangilanish: 2026-yil 16-noyabr</p>
 
 <p>Ushbu siyosat SIMAK (keyingi o'rinlarda — «biz») mijozlar bilan sayt, WhatsApp, Telegram, Instagram va telefon orqali muloqot qilganda qanday ma'lumot olishi va undan qanday foydalanishini tushuntiradi.</p>
 
@@ -35,7 +61,7 @@ footer{background:#111214;color:#A3A7AE;padding:28px 0;font-size:14px}
 <li>Bizga yozgan xabarlaringiz matni, yuborgan rasm va fayllaringiz;</li>
 <li>Uskunaga oid ehtiyojingiz: ish turi, hajm, shahar yoki viloyat, yetkazib berish manzili.</li>
 </ul>
-<p>Bu sayt cookie yoki kuzatuv kodlaridan foydalanmaydi va shaxsiy ma'lumot yig'adigan forma yo'q.</p>
+<p>Saytda shaxsiy ma'lumot yig'adigan forma yo'q. Reklamamiz samaradorligini o'lchash uchun saytda Meta Pixel (Meta Platforms kompaniyasining kodi) ishlatiladi: u sahifa ochilganini va Telegram, telefon yoki WhatsApp havolasi bosilganini qayd etadi va buning uchun cookie fayllaridan foydalanishi mumkin. Bu ma'lumotlarni Meta o'z maxfiylik siyosatiga muvofiq qayta ishlaydi. Cookie fayllarini brauzeringiz sozlamalarida o'chirib qo'yishingiz mumkin.</p>
 
 <h2>2. Ma'lumotdan nima uchun foydalanamiz</h2>
 <ul>
